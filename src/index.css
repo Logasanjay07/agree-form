@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom base overrides for the premium brand */
 :root{
-  --primary-green:#1B5E20;
+  --primary-green:#0B7A33;
   --fresh-green:#4CAF50;
-  --organic-gold:#FFC107;
-  --bg:#F8FFF5;
-  --dark:#0f3f14;
+  --organic-gold:#C6E86A;
+  --bg:#FFFFFF;
+  --dark:#0F172A;
 }
 
 html,body,#root{height:100%}
-html{scroll-behavior:smooth}
-body{background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;overflow-x:hidden;color:var(--dark)}
+*{box-sizing:border-box}
 
 /* small helper for glass navbar */
 .glass{background:rgba(255,255,255,0.6);backdrop-filter:blur(6px)}
@@ -30,5 +33,90 @@ img{display:block;max-width:100%}
 /* footer */
 .footer-dark{background:var(--dark);color:#e7f9ea}
 
+.farm-image-frame{
+  border-radius:16px;
+  background:#F7FBF5;
+}
+
 /* responsive tweaks */
 @media (min-width:1280px){.container{max-width:1320px}}
+
+/* Mobile polish below the Samsung Galaxy S20 reference width (412px). */
+@media (max-width:411px){
+  .mobile-navbar > div{padding:0.75rem 0.875rem}
+  .mobile-navbar a[href="/"]{gap:0.75rem}
+  .mobile-navbar a[href="/"] > div:first-child{width:3rem;height:3rem;font-size:1rem}
+  .mobile-navbar a[href="/"] > div:last-child > div:first-child{font-size:clamp(1rem,5.4vw,1.2rem);line-height:1.05}
+  .mobile-navbar a[href="/"] > div:last-child > div:last-child{font-size:0.56rem;letter-spacing:0.22em}
+  .mobile-navbar button[aria-label="Toggle navigation"]{width:3rem;height:3rem;border-radius:1rem;font-size:1.35rem}
+
+  .mobile-home section{padding-left:clamp(0.75rem,4vw,1.25rem);padding-right:clamp(0.75rem,4vw,1.25rem)}
+  .mobile-home #home{min-height:auto;border-bottom-left-radius:2.25rem;border-bottom-right-radius:2.25rem}
+  .mobile-home #home > .relative.mx-auto{min-height:calc(100svh - 78px);padding-top:2.5rem;padding-bottom:2.25rem}
+  .mobile-home #home h1{font-size:clamp(3.05rem,15.2vw,3.95rem)!important;line-height:0.98}
+  .mobile-home #home p{font-size:clamp(1.05rem,5vw,1.32rem);line-height:1.35}
+  .mobile-home #home a[href="#about-farm"]{gap:0.7rem;padding:0.9rem 1.2rem;font-size:clamp(0.95rem,4.5vw,1.1rem)}
+
+  .mobile-home #home .grid.grid-cols-4,
+  .mobile-home #about-farm .grid.grid-cols-4{border-radius:1.35rem;padding:0.65rem}
+  .mobile-home #home .grid.grid-cols-4 > div,
+  .mobile-home #about-farm .grid.grid-cols-4 > div{padding-left:0.25rem;padding-right:0.25rem}
+  .mobile-home #home .grid.grid-cols-4 > div > div:nth-child(2){font-size:1.38rem}
+  .mobile-home #about-farm .grid.grid-cols-4 > div > div:nth-child(2){font-size:1.55rem}
+  .mobile-home #home .grid.grid-cols-4 > div > div:last-child,
+  .mobile-home #about-farm .grid.grid-cols-4 > div > div:last-child{font-size:0.62rem;line-height:1.05rem}
+
+  .mobile-home #about-farm h2,
+  .mobile-home #products h2,
+  .mobile-home #our-farm h2{font-size:clamp(2.15rem,10.5vw,2.65rem)!important}
+  .mobile-home #about-farm .natural-cycle-diagram{width:100%;max-width:390px;margin-top:1.25rem}
+  .mobile-home #about-farm .natural-cycle-diagram img{border-width:4px}
+  .mobile-home #about-farm .natural-cycle-diagram div[class*="mt-[-3px]"]{min-height:30px;padding:0.32rem 0.35rem;font-size:clamp(0.55rem,2.55vw,0.72rem);line-height:1.05}
+  .mobile-home #about-farm .natural-cycle-diagram .text-\[clamp\(0\.9rem\,3\.4vw\,1\.65rem\)\]{font-size:clamp(0.68rem,3vw,0.9rem)}
+
+  .mobile-home #products > div,
+  .mobile-home #our-farm > div,
+  .mobile-home #contact > div{max-width:386px}
+  .mobile-home #products .mt-5.grid{gap:0.65rem}
+  .mobile-home #products article{border-radius:1.1rem}
+  .mobile-home #products article > div:last-child{padding:0.6rem;display:grid;grid-template-columns:2.25rem minmax(0,1fr) 2.25rem;align-items:center}
+  .mobile-home #products article h3{font-size:clamp(0.9rem,4.2vw,1.08rem)}
+  .mobile-home #products article p{font-size:0.7rem}
+  .mobile-home #products article button{width:2.25rem;height:2.25rem}
+
+  .mobile-home #our-farm .farm-zone-card{grid-template-columns:52% 48%;min-height:5.75rem;border-radius:1rem;padding-top:0.45rem;padding-bottom:0.45rem;padding-left:0.45rem;padding-right:0}
+  .mobile-home #our-farm .farm-zone-card > div:first-child{gap:0.5rem;padding:0.35rem}
+  .mobile-home #our-farm .farm-zone-card > div:first-child > span{width:2.35rem;height:2.35rem;font-size:1.25rem}
+  .mobile-home #our-farm .farm-zone-card .farm-image-frame{height:4.75rem;border-radius:0.85rem}
+  .mobile-home #our-farm .farm-zone-card img{height:100%;min-height:0}
+  .mobile-home #our-farm .mt-9 .flex.items-center.justify-between{align-items:flex-start}
+  .mobile-home #our-farm .mt-9 .flex.items-center.gap-5{gap:0.85rem}
+  .mobile-home #our-farm .mt-9 h3{font-size:1.35rem}
+
+  .mobile-home section:not(#home){padding-top:3rem;padding-bottom:3rem}
+  .mobile-home #contact h2{font-size:clamp(2rem,10.5vw,2.55rem)!important}
+  .mobile-home #contact .rounded-\[30px\]{border-radius:1.5rem;padding:1.25rem}
+  .mobile-home #contact .rounded-\[28px\]{border-radius:1.4rem;padding:1.15rem}
+  .mobile-home #contact .flex.gap-4{gap:0.75rem}
+
+  .mobile-footer{padding-left:0.875rem;padding-right:0.875rem}
+  .mobile-footer .flex.items-center.gap-4{gap:0.75rem}
+  .mobile-footer .flex.items-center.gap-4 > div:first-child{width:3rem;height:3rem;font-size:1rem}
+  .mobile-footer .min-w-0 > div:first-child{font-size:1.2rem;line-height:1.12}
+  .mobile-footer .min-w-0 > div:last-child{font-size:0.56rem;letter-spacing:0.18em}
+}
+
+@media (max-width:359px){
+  .mobile-home section{padding-left:0.7rem;padding-right:0.7rem}
+  .mobile-home #home h1{font-size:3rem!important}
+  .mobile-home #home .grid.grid-cols-4,
+  .mobile-home #about-farm .grid.grid-cols-4{padding:0.55rem}
+  .mobile-home #about-farm .natural-cycle-diagram{width:100%;max-width:360px}
+  .mobile-home #about-farm .natural-cycle-diagram > div[class*="absolute"][class*="flex"][class*="w-"]{width:28%}
+  .mobile-home #about-farm .natural-cycle-diagram div[class*="mt-[-3px]"]{font-size:0.5rem;min-height:28px;padding-left:0.25rem;padding-right:0.25rem}
+  .mobile-home #products .mt-5.grid{gap:0.55rem}
+  .mobile-home #products article > div:last-child{grid-template-columns:2.1rem minmax(0,1fr) 2.1rem}
+  .mobile-home #contact .grid.gap-3{gap:0.65rem}
+}
+
+
