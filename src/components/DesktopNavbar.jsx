@@ -51,7 +51,7 @@ export default function DesktopNavbar() {
               SF
             </div>
             <div className="min-w-0">
-              <p className="truncate text-base font-black text-[#007A37] lg:text-xl">Sanjay's FoodCourt</p>
+              <p className="truncate text-base font-black text-[#007A37] lg:text-xl">Sanjay's</p>
               <p className="truncate text-[10px] font-semibold uppercase tracking-[0.28em] text-[#5FB22E]">
                 Organic Agriculture
               </p>
