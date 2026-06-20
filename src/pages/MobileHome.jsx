@@ -74,6 +74,15 @@ const cycleNodes = [
   { label: 'Vermicompost Farming', image: earthFarm, position: 'left-[2%] top-[25%]' },
 ]
 
+const cycleCards = [
+  { title: '28 Acres Integrated Farmland', text: 'Producing vegetables, rice, fish, poultry, goats, and vermicompost.', icon: <FaSeedling /> },
+  { title: 'Organic Manure for Soil Health', text: 'Cow and livestock waste is converted into organic manure for fields.', icon: <FaLeaf /> },
+  { title: 'Natural Feed for Animals', text: 'Vegetable waste is reused as natural feed for animals and poultry.', icon: <FaLeaf /> },
+  { title: 'Fish Farming Support', text: 'Chicken waste supports fish farming in our natural ponds.', icon: <FaRecycle /> },
+  { title: 'Water Recycling for Irrigation', text: 'Treated fish tank water returns to crops, rice fields, and vegetables.', icon: <FiShoppingCart /> },
+  { title: 'Vermicompost Enrichment', text: 'Earthworm farming produces compost that enriches the entire farm.', icon: <FaRecycle /> },
+]
+
 function SectionHeader({ eyebrow, title, text, center = true }) {
   return (
     <motion.div
@@ -149,35 +158,35 @@ function AboutSection() {
     <section id="about-farm" className="overflow-hidden bg-white px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-[1180px]">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
-          <div className="flex items-center gap-3 font-['Poppins'] text-2xl font-semibold italic text-[#0B7A33]">
+          <div className="flex items-center gap-2.5 font-['Poppins'] text-xl font-semibold italic text-[#0B7A33] sm:text-2xl">
             <FaLeaf />
             About Our Farm
           </div>
-          <h2 className="mt-5 max-w-4xl font-['Poppins'] text-[clamp(2.7rem,10vw,4.8rem)] font-extrabold leading-[1.08] text-[#08251B]">
+          <h2 className="mt-4 max-w-4xl font-['Poppins'] text-[clamp(2.05rem,8.8vw,3.6rem)] font-extrabold leading-[1.1] text-[#08251B] sm:mt-5">
             Integrated Natural <span className="text-[#0B7A33]">Farming System</span>
           </h2>
-          <div className="my-7 flex items-center justify-center gap-4 text-[#0B7A33]">
+          <div className="my-6 flex items-center justify-center gap-4 text-[#0B7A33] sm:my-7">
             <span className="h-px w-24 bg-[#0B7A33]"></span>
             <FaLeaf className="text-2xl" />
             <span className="h-px w-24 bg-[#C9DBC2]"></span>
           </div>
-          <p className="max-w-3xl text-xl font-medium leading-9 text-[#3F4A59] sm:text-2xl sm:leading-10">
+          <p className="max-w-3xl text-base font-medium leading-7 text-[#3F4A59] sm:text-lg sm:leading-8">
             We follow a natural cycle of farming where every resource is used wisely and nothing goes to waste. Nature gives, we nurture, and together we create abundance.
           </p>
         </motion.div>
 
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="mt-8 grid grid-cols-4 rounded-[26px] bg-[#EAF7EC] px-2 py-5 text-center shadow-[inset_0_0_0_1px_rgba(11,122,51,0.07),0_12px_30px_rgba(11,122,51,0.08)] sm:px-6">
+        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="mt-7 grid grid-cols-4 rounded-[22px] bg-[#EAF7EC] px-1.5 py-4 text-center shadow-[inset_0_0_0_1px_rgba(11,122,51,0.07),0_12px_30px_rgba(11,122,51,0.08)] sm:mt-8 sm:rounded-[26px] sm:px-6 sm:py-5">
           {stats.map((stat, index) => (
             <motion.div key={stat.label} variants={fadeUp} className={`px-2 ${index !== stats.length - 1 ? 'border-r border-[#C9DBC2]' : ''}`}>
-              <div className="mx-auto mb-2 flex h-8 items-center justify-center text-2xl text-[#0B7A33]">{stat.icon}</div>
-              <div className="font-['Poppins'] text-3xl font-extrabold leading-none text-[#0B7A33] sm:text-5xl">{stat.value}</div>
-              <div className="mt-2 text-sm font-semibold leading-5 text-black sm:text-xl">{stat.label}</div>
+              <div className="mx-auto mb-2 flex h-7 items-center justify-center text-xl text-[#0B7A33] sm:h-8 sm:text-2xl">{stat.icon}</div>
+              <div className="font-['Poppins'] text-2xl font-extrabold leading-none text-[#0B7A33] sm:text-4xl">{stat.value}</div>
+              <div className="mt-2 text-[0.68rem] font-semibold leading-4 text-black sm:text-base sm:leading-5">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
         <div className="mt-10">
-          <h3 className="flex items-center gap-3 font-['Poppins'] text-2xl font-extrabold text-[#0B7A33] sm:text-4xl">
+          <h3 className="flex items-center gap-3 font-['Poppins'] text-xl font-extrabold text-[#0B7A33] sm:text-3xl">
             <FaLeaf />
             Our Natural Cycle
           </h3>
@@ -215,6 +224,18 @@ function AboutSection() {
               </div>
             ))}
           </motion.div>
+
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} className="mt-7 grid gap-3 sm:grid-cols-2">
+            {cycleCards.map((card) => (
+              <motion.article key={card.title} variants={fadeUp} className="rounded-[18px] border border-[#E5EFE3] bg-white p-4 shadow-[0_10px_28px_rgba(17,74,28,0.08)]">
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-[14px] bg-[#EEF8E9] text-xl text-[#37A536]">
+                  {card.icon}
+                </div>
+                <h3 className="font-['Poppins'] text-base font-extrabold leading-6 text-[#12352D]">{card.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#5E6C63]">{card.text}</p>
+              </motion.article>
+            ))}
+          </motion.div>
         </div>
 
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} className="relative mt-8 overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#065F2C,#0B7A33)] p-6 text-white shadow-[0_18px_42px_rgba(6,95,44,0.24)] sm:p-8">
@@ -244,10 +265,10 @@ function ProductsSection() {
             <FaLeaf />
             Our Products
           </div>
-          <h2 className="mt-6 font-['Poppins'] text-[clamp(1.65rem,7vw,2.9rem)] font-extrabold leading-[1.14] text-[#08251B]">
-            <span className="whitespace-nowrap">Farm Fresh. Hand Picked.</span><br /><span className="text-[#0B7A33]">Just for You.</span>
+          <h2 className="mt-5 font-['Poppins'] text-[clamp(1.45rem,6vw,2.7rem)] font-extrabold leading-[1.16] text-[#08251B] sm:mt-6">
+            <span>Farm Fresh. Hand Picked.</span><br /><span className="text-[#0B7A33]">Just for You.</span>
           </h2>
-          <p className="mt-5 max-w-2xl text-xl font-medium leading-8 text-[#4B5563]">
+          <p className="mt-4 max-w-2xl text-base font-medium leading-7 text-[#4B5563] sm:mt-5 sm:text-lg sm:leading-8">
             Fresh, organic and natural products directly from our farm to your family.
           </p>
           <div className="mx-auto mt-6 flex max-w-[260px] items-center justify-center gap-4 text-[#0B7A33]">
@@ -257,9 +278,9 @@ function ProductsSection() {
           </div>
         </motion.div>
 
-        <div className="-mx-5 mt-8 flex gap-3 overflow-x-auto px-5 pb-3 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
+        <div className="mt-7 grid grid-cols-3 gap-2 pb-3 sm:mx-0 sm:flex sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:px-0">
           {filters.map((filter, index) => (
-            <button key={filter} className={`shrink-0 rounded-full px-5 py-3 text-sm font-bold transition active:scale-95 ${index === 0 ? 'bg-gradient-to-r from-[#065F2C] to-[#0B7A33] text-white shadow-[0_16px_34px_rgba(11,122,51,0.25)]' : 'border border-[#DDEBDD] bg-white text-[#0B7A33] shadow-[0_8px_20px_rgba(18,34,49,0.06)] hover:border-[#4CAF50]'}`}>
+            <button key={filter} className={`min-h-10 rounded-full px-2 py-2 text-[0.68rem] font-bold leading-tight transition active:scale-95 sm:min-h-0 sm:shrink-0 sm:px-5 sm:py-3 sm:text-sm ${index === 0 ? 'bg-gradient-to-r from-[#065F2C] to-[#0B7A33] text-white shadow-[0_16px_34px_rgba(11,122,51,0.25)]' : 'border border-[#DDEBDD] bg-white text-[#0B7A33] shadow-[0_8px_20px_rgba(18,34,49,0.06)] hover:border-[#4CAF50]'}`}>
               {filter}
             </button>
           ))}
@@ -299,34 +320,34 @@ function ProductsSection() {
 
 function LandSection() {
   return (
-    <section id="our-farm" className="bg-white px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
+    <section id="our-farm" className="bg-white px-4 py-12 sm:px-8 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-[760px]">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
-          <div className="flex items-center gap-3 font-['Poppins'] text-2xl font-semibold italic text-[#0B7A33]">
+          <div className="flex items-center gap-2.5 font-['Poppins'] text-xl font-semibold italic text-[#0B7A33] sm:text-2xl">
             <FaLeaf />
             Our 28 Acres
           </div>
-          <h2 className="mt-5 font-['Poppins'] text-[clamp(2.55rem,10vw,4.8rem)] font-extrabold leading-tight text-[#08251B]">
+          <h2 className="mt-4 font-['Poppins'] text-[clamp(2rem,8.8vw,3.5rem)] font-extrabold leading-tight text-[#08251B] sm:mt-5">
             Integrated Organic Farm
           </h2>
-          <span className="mt-5 block h-1 w-24 rounded-full bg-[#0B7A33]"></span>
-          <p className="mt-6 max-w-3xl text-xl font-medium leading-8 text-[#64748B]">
+          <span className="mt-4 block h-1 w-20 rounded-full bg-[#0B7A33] sm:mt-5 sm:w-24"></span>
+          <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-[#64748B] sm:mt-6 sm:text-lg sm:leading-8">
             A complete integrated farmland producing a variety of fresh and organic products.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="mt-7 grid grid-cols-2 overflow-hidden rounded-[24px] border border-[#DCEBDA] bg-white shadow-[0_14px_36px_rgba(18,34,49,0.08)]">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="mt-6 grid grid-cols-2 overflow-hidden rounded-[22px] border border-[#DCEBDA] bg-white shadow-[0_14px_36px_rgba(18,34,49,0.08)] sm:mt-7 sm:rounded-[24px]">
           {[
             ['28', 'Total Acres', <GiPlantRoots />],
             ['8+', 'Farming Units', <FaLeaf />],
           ].map(([value, label, icon], index) => (
-            <div key={label} className={`flex items-center gap-4 p-5 ${index === 0 ? 'border-r border-[#DCEBDA]' : ''}`}>
-              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#EAF7EC] text-3xl text-[#0B7A33]">
+            <div key={label} className={`flex min-w-0 items-center gap-2 p-3 sm:gap-4 sm:p-5 ${index === 0 ? 'border-r border-[#DCEBDA]' : ''}`}>
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#EAF7EC] text-2xl text-[#0B7A33] sm:h-16 sm:w-16 sm:text-3xl">
                 {icon}
               </span>
-              <span>
-                <span className="block font-['Poppins'] text-4xl font-extrabold leading-none text-[#0B7A33]">{value}</span>
-                <span className="mt-1 block font-['Poppins'] text-base font-extrabold leading-tight text-[#0F172A]">{label}</span>
+              <span className="min-w-0">
+                <span className="block font-['Poppins'] text-3xl font-extrabold leading-none text-[#0B7A33] sm:text-4xl">{value}</span>
+                <span className="mt-1 block font-['Poppins'] text-sm font-extrabold leading-tight text-[#0F172A] sm:text-base">{label}</span>
               </span>
             </div>
           ))}
@@ -334,17 +355,17 @@ function LandSection() {
 
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} className="mt-8 space-y-4">
           {farmZones.map((zone) => (
-            <motion.article key={zone.title} variants={fadeUp} className="farm-zone-card group grid min-h-[96px] grid-cols-[51%_49%] items-center overflow-hidden rounded-[18px] bg-white py-2 pl-2 pr-0 shadow-[0_10px_24px_rgba(18,34,49,0.12)] ring-1 ring-[#E4EEE1] transition hover:-translate-y-1 hover:shadow-[0_20px_46px_rgba(11,122,51,0.16)]">
+            <motion.article key={zone.title} variants={fadeUp} className="farm-zone-card group grid min-h-[92px] grid-cols-[50%_50%] items-center overflow-hidden rounded-[18px] bg-white py-2 pl-2 pr-0 shadow-[0_10px_24px_rgba(18,34,49,0.12)] ring-1 ring-[#E4EEE1] transition hover:-translate-y-1 hover:shadow-[0_20px_46px_rgba(11,122,51,0.16)] sm:min-h-[104px] sm:grid-cols-[51%_49%]">
               <div className="flex min-w-0 items-center gap-2.5 px-1.5 py-2 sm:gap-4 sm:px-3 sm:py-3">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#EAF7EC] text-2xl text-[#0B7A33] sm:h-14 sm:w-14">
                   {zone.icon}
                 </span>
                 <div className="min-w-0">
-                  <div className="font-['Poppins'] text-[clamp(1.05rem,4.4vw,1.55rem)] font-extrabold leading-none text-[#0B7A33]">{zone.area}</div>
-                  <div className="mt-1 truncate whitespace-nowrap font-['Poppins'] text-[clamp(0.88rem,3.65vw,1.2rem)] font-extrabold leading-tight text-[#152238]">{zone.title}</div>
+                  <div className="font-['Poppins'] text-[clamp(0.95rem,4vw,1.35rem)] font-extrabold leading-none text-[#0B7A33]">{zone.area}</div>
+                  <div className="mt-1 truncate whitespace-nowrap font-['Poppins'] text-[clamp(0.78rem,3.35vw,1.05rem)] font-extrabold leading-tight text-[#152238]">{zone.title}</div>
                 </div>
               </div>
-              <div className="farm-image-frame h-[80px] w-full overflow-hidden rounded-r-[18px] sm:h-[92px]">
+              <div className="farm-image-frame h-[76px] w-full overflow-hidden rounded-r-[18px] sm:h-[92px]">
                 <img src={zone.image} alt={zone.title} loading="lazy" className="h-full w-full bg-[#F7FBF5] object-contain transition duration-500 group-hover:scale-105" />
               </div>
             </motion.article>

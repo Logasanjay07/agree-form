@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FaLeaf } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { FiMenu, FiPhone, FiX } from 'react-icons/fi'
+import logo from '../assets/logo-cropped.png'
 
 const navItems = [
   { label: 'Home', href: '/#home' },
@@ -24,14 +25,8 @@ export default function MobileNavbar() {
     >
       <div className="mx-auto max-w-[1440px] px-5 py-4 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between gap-4">
-          <Link to="/" onClick={() => setOpen(false)} className="flex min-w-0 items-center gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#0B7A33] to-[#065F2C] font-['Poppins'] text-xl font-extrabold text-white shadow-[0_12px_26px_rgba(11,122,51,0.18)] sm:h-16 sm:w-16 sm:text-2xl">
-              SF
-            </div>
-            <div className="min-w-0">
-              <div className="truncate font-['Poppins'] text-xl font-extrabold leading-tight text-[#065F2C] sm:text-3xl lg:text-2xl">Sanjay's FoodCourt</div>
-              <div className="truncate text-[0.68rem] font-extrabold uppercase tracking-[0.32em] text-[#0B7A33] sm:text-sm lg:text-xs">Organic Agriculture</div>
-            </div>
+          <Link to="/" onClick={() => setOpen(false)} className="flex min-w-0 items-center">
+            <img src={logo} alt="Sanjay Organic Agriculture" className="h-16 w-auto max-w-[220px] object-contain sm:h-20 sm:max-w-[280px]" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">

@@ -1,5 +1,6 @@
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { FiArrowRight } from 'react-icons/fi'
+import footerLogo from '../assets/buttom-logo-cropped.png'
 
 const links = [
   { label: 'Home', href: '/#home' },
@@ -21,14 +22,8 @@ export default function MobileFooter() {
       <div className="relative mx-auto max-w-[760px]">
         <div className="grid gap-9">
           <div>
-            <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#007A37] font-['Poppins'] text-xl font-extrabold text-white shadow-[0_14px_30px_rgba(0,0,0,0.18)]">
-                SF
-              </div>
-              <div className="min-w-0">
-                <div className="font-['Poppins'] text-2xl font-extrabold leading-tight text-white">Sanjay's FoodCourt</div>
-                <div className="mt-1 text-[0.68rem] font-extrabold uppercase tracking-[0.28em] text-[#BFE7B0]">Organic Agriculture</div>
-              </div>
+            <div className="flex items-center">
+              <img src={footerLogo} alt="Sanjay Organic Farm" className="h-24 w-auto max-w-[320px] rounded-xl object-contain" />
             </div>
             <p className="mt-5 max-w-md text-sm leading-7 text-[#D6F0D3]">
               Premium organic agriculture brand committed to growing healthy, chemical-free food from our farm to your family.

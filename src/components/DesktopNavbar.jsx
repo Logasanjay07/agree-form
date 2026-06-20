@@ -2,6 +2,7 @@
 import { FaFacebookF, FaInstagram, FaLeaf, FaWhatsapp } from 'react-icons/fa'
 import { Link, useLocation } from 'react-router-dom'
 import { FiMail, FiMenu, FiPhone, FiX } from 'react-icons/fi'
+import logo from '../assets/logo-cropped.png'
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -46,16 +47,8 @@ export default function DesktopNavbar() {
 
       <div className="container mx-auto px-4 py-3 lg:py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#007A37] text-lg font-black text-white lg:h-12 lg:w-12">
-              SF
-            </div>
-            <div className="min-w-0">
-              <p className="truncate text-base font-black text-[#007A37] lg:text-xl">Sanjay</p>
-              <p className="truncate text-[10px] font-semibold uppercase tracking-[0.28em] text-[#5FB22E]">
-                Organic Agriculture
-              </p>
-            </div>
+          <Link to="/" className="flex min-w-0 items-center" onClick={() => setOpen(false)}>
+            <img src={logo} alt="Sanjay Organic Agriculture" className="h-16 w-auto max-w-[230px] object-contain lg:h-20 lg:max-w-[310px]" />
           </Link>
 
           <nav className="hidden items-center gap-2 lg:flex">

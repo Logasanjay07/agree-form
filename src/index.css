@@ -41,8 +41,8 @@ img{display:block;max-width:100%}
 /* responsive tweaks */
 @media (min-width:1280px){.container{max-width:1320px}}
 
-/* Mobile polish below the Samsung Galaxy S20 reference width (412px). */
-@media (max-width:411px){
+/* Phone polish across common mobile widths. */
+@media (max-width:639px){
   .mobile-navbar > div{padding:0.75rem 0.875rem}
   .mobile-navbar a[href="/"]{gap:0.75rem}
   .mobile-navbar a[href="/"] > div:first-child{width:3rem;height:3rem;font-size:1rem}
@@ -68,7 +68,8 @@ img{display:block;max-width:100%}
 
   .mobile-home #about-farm h2,
   .mobile-home #products h2,
-  .mobile-home #our-farm h2{font-size:clamp(2.15rem,10.5vw,2.65rem)!important}
+  .mobile-home #our-farm h2{font-size:clamp(1.9rem,8.8vw,2.55rem)!important}
+  .mobile-home #products h2{font-size:clamp(1.45rem,6vw,2rem)!important}
   .mobile-home #about-farm .natural-cycle-diagram{width:100%;max-width:390px;margin-top:1.25rem}
   .mobile-home #about-farm .natural-cycle-diagram img{border-width:4px}
   .mobile-home #about-farm .natural-cycle-diagram div[class*="mt-[-3px]"]{min-height:30px;padding:0.32rem 0.35rem;font-size:clamp(0.55rem,2.55vw,0.72rem);line-height:1.05}
@@ -76,7 +77,7 @@ img{display:block;max-width:100%}
 
   .mobile-home #products > div,
   .mobile-home #our-farm > div,
-  .mobile-home #contact > div{max-width:386px}
+  .mobile-home #contact > div{max-width:560px}
   .mobile-home #products .mt-5.grid{gap:0.65rem}
   .mobile-home #products article{border-radius:1.1rem}
   .mobile-home #products article > div:last-child{padding:0.6rem;display:grid;grid-template-columns:2.25rem minmax(0,1fr) 2.25rem;align-items:center}
@@ -104,6 +105,12 @@ img{display:block;max-width:100%}
   .mobile-footer .flex.items-center.gap-4 > div:first-child{width:3rem;height:3rem;font-size:1rem}
   .mobile-footer .min-w-0 > div:first-child{font-size:1.2rem;line-height:1.12}
   .mobile-footer .min-w-0 > div:last-child{font-size:0.56rem;letter-spacing:0.18em}
+}
+
+@media (max-width:411px){
+  .mobile-home #products > div,
+  .mobile-home #our-farm > div,
+  .mobile-home #contact > div{max-width:386px}
 }
 
 @media (max-width:359px){
